@@ -13,18 +13,6 @@
         tools:layout_editor_absoluteY="16dp" />
 
     <EditText
-        android:id="@+id/txtPrice"
-        android:layout_width="0dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="8dp"
-        android:hint="@string/price"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="@+id/txtTitle"
-        app:layout_constraintHorizontal_bias="0.364"
-        app:layout_constraintStart_toStartOf="@+id/txtTitle"
-        app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
-
-    <EditText
         android:id="@+id/txtTitle"
         android:layout_width="0dp"
         android:layout_height="47dp"
@@ -36,6 +24,18 @@
         app:layout_constraintHorizontal_bias="0.364"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/include" />
+
+    <EditText
+        android:id="@+id/txtPrice"
+        android:layout_width="0dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/price"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="@+id/txtTitle"
+        app:layout_constraintHorizontal_bias="0.364"
+        app:layout_constraintStart_toStartOf="@+id/txtTitle"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
 
     <EditText
         android:id="@+id/txtDescription"

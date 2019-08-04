@@ -40,10 +40,10 @@ public class InsertActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.save_menu:
-            saveDeal();
-            Toast.makeText(this,"Deal saved", Toast.LENGTH_LONG);
-            clean();
-            return true;
+                saveDeal();
+                Toast.makeText(this,"Deal saved", Toast.LENGTH_LONG);
+                clean();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
