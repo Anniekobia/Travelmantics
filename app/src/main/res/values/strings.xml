@@ -5,4 +5,5 @@
     <string name="price">Price (Numbers only)</string>
     <string name="deal_title">Deal Title</string>
     <string name="description">Description</string>
+    <string name="delete_menu">Delete</string>
 </resources>
