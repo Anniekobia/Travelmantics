@@ -30,6 +30,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import static com.example.travelmantics.FirebaseUtil.mStorageRef;
+
 public class DealActivity extends AppCompatActivity {
 
     private FirebaseDatabase mFirebaseDatabase;
@@ -165,21 +167,20 @@ public class DealActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode==PICTURE_RESULT && resultCode==RESULT_OK){
             Uri imageUrl = data.getData();
-            final StorageReference ref = FirebaseUtil.mStorageRef.child(imageUrl.getLastPathSegment());
+            Log.d("Image","this is the image uri:  "+imageUrl);
+            StorageReference ref = FirebaseUtil.mStorageRef.child(imageUrl.getLastPathSegment());
             ref.putFile(imageUrl).addOnSuccessListener(this, new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    String url = taskSnapshot.getMetadata().getReference().getDownloadUrl().toString();
+                    String url = taskSnapshot.getStorage().getDownloadUrl().toString();
+                    Log.d("Image","this is the image download url:  "+url);
                     deal.setImageUrl(url);
-
+                    Log.d("Image","The set url is "+ deal.getImageUrl());
                     String pictureName=taskSnapshot.getStorage().getPath();
                     deal.setImageName(pictureName);
-                    //next lines
                     showImage(url);
-
                 }
             });
-
         }
     }
     private void showImage(String url){
